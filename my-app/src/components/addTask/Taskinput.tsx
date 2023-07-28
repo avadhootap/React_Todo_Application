@@ -17,10 +17,10 @@ function Taskinput() {
   return (
     <div>
       <label >Task:</label><br></br>
-      <input type="text" id="task" name="task" onChange={handleInput}/><br></br>
+      <input type="text" id="task" name="task" onChange={handleInput} placeholder={"Add task you want to do..."}/><br></br>
       <p>{task}</p>
       <button type='button' id='btn' onClick={addtask}>ADD</button>
-      <TaskList></TaskList>
+      <TaskList tasks={task}></TaskList>
     </div>
   )
 }

@@ -8,7 +8,7 @@ import Taskinput from './components/addTask/Taskinput';
 
 function App() {
   return (
-    <div>
+    <div className='App'>
          <h3>React ToDo Application</h3>
          <div>
          <TaskList></TaskList>
