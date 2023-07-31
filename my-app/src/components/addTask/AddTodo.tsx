@@ -1,45 +1,15 @@
-import React, { useState } from 'react'
-import TaskList from '../todoList/ListTodo';
-import Delete from '../DeleteAll/Delete';
-function Taskinput() {
 
-  const [task,setTask]=useState<string []>([]);
-  const [inputtask,setInputTask]=useState("");
-
-  function handleInput(e){
-    setInputTask(e.target.value); 
-  }
-
-  function deleteTask(id){
-    setTask((task)=>{
-      const deletetask=[...task];
-      deletetask.splice(id,1);
-      return deletetask;
-    });
-  }
-
-  function Deleteall(){
-    setTask((task)=>{
-      const deleteAll=[...task];
-      deleteAll.length=0;
-      return deleteAll;
-    });
-  }
-
-  function addtask(){
-    setTask((task)=>[...task,inputtask]);
-  }
-
+function AddTodo(prop) {
+  const {handleInput,addtask,inputVal}=prop;
   return (
     <div>
       <label >Task:</label><br></br>
-      <input type="text" id="task" name="task" onChange={handleInput} placeholder={"Add task you want to do..."}/><br></br>
+      <input type="text" id="task" name="task" value={inputVal} onChange={handleInput} placeholder={"Add task you want to do..."}/> &nbsp;
       <button type='button' id='btn' onClick={addtask}>ADD</button>
-      <TaskList tasks={task} Delete={deleteTask}></TaskList>
-      <Delete DeleteAll={Deleteall}></Delete>
+    
     </div>
   )
 }
 
-export default Taskinput
+export default AddTodo
  

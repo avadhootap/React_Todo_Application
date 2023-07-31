@@ -1,4 +1,5 @@
 import React from 'react'
+import Todo from './Todo';
 function TaskList(props) {
   const {tasks,Delete}=props;
   return (
@@ -7,7 +8,7 @@ function TaskList(props) {
     {tasks?.length > 0 && (
         <div>
             {tasks.map((task,index) => (
-            <li key={index}>{task} <button type='button' id='btn' onClick={()=>Delete(index)}>Delete</button></li>
+            <Todo tasks={task} indexVal={index} DeleteTask={Delete}></Todo>
               ))}
         </div>            
       )}
