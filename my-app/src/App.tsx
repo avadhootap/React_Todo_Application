@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TaskList from './components/todoList/TaskList';
-import Taskinput from './components/addTask/Taskinput';
+import Taskinput from './components/addTask/AddTodo';
+import Delete from './components/DeleteAll/Delete';
 
 
 
@@ -11,13 +11,8 @@ function App() {
     <div className='App'>
          <h3>React ToDo Application</h3>
          <div>
-         <TaskList></TaskList>
-         </div>
-         <div>
           <Taskinput></Taskinput>
          </div>
-         
-         
     </div>
    
    
