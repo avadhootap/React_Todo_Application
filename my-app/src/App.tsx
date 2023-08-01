@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './App.css';
 import TaskList from './components/todoList/ListTodo';
-import Delete from './components/DeleteAll/Delete';
 import AddTodo from './components/addTask/AddTodo';
+import RemoveAll from './components/DeleteAll/RemoveAll';
+import Button from './components/Button/Button';
 
 function App() {
   
   const [task,setTask]=useState<string []>([]);
   const [inputtask,setInputTask]=useState("");
-
-  // useEffect(()=>{
-  //   alert("Are you sure you want to Delete...?")
-  // },[])
 
   function handleInputs(e){
     setInputTask(e.target.value);
@@ -25,6 +22,7 @@ function App() {
     });
   }
 
+
   function Deleteall(){
     setTask((task)=>{
       const deleteAll=[...task];
@@ -34,19 +32,24 @@ function App() {
   }
 
   function addtask(){
-    setTask((task)=>[...task,inputtask]);
-    setInputTask('');
-
+    if(inputtask!==""){
+      setTask((task)=>[...task,inputtask]);
+      setInputTask('');
+    }
+   
   }
+
+
   return (
     <div className='App'>
          <h3>React ToDo Application</h3>
          <div>
           <AddTodo tasks={task} addtask={addtask} inputVal={inputtask} handleInput={handleInputs}></AddTodo><hr></hr>
           <TaskList tasks={task} Delete={deleteTask}></TaskList><br></br>
-           <Delete DeleteAll={Deleteall}></Delete>
+          <RemoveAll DeleteAll={Deleteall} buttonText="Delete-All"></RemoveAll>
          </div>
     </div>
+    
    
    
   );
