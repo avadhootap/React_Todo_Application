@@ -57,6 +57,16 @@ function App() {
       setInputTask('');
     }
   }
+
+  function updateTask(id: number, updatedTitle: string) {
+    setTask((tasks) => {
+      const updatedTasks = tasks.map((task) =>
+        task.id === id ? { ...task, title: updatedTitle } : task
+      );
+      return updatedTasks;
+    });
+  }
+
   return (
     <div className='App'>
          <h3>React ToDo Application</h3>
@@ -64,7 +74,7 @@ function App() {
          
           <AddTodo addtask={addtask} inputVal={inputtask} handleInput={handleInputs}></AddTodo><hr></hr>
           <Button DeleteAll={Deleteall} buttonText="Delete-All"></Button>
-          <TaskList tasks={task} Delete={deleteTask}></TaskList><br></br>
+          <TaskList tasks={task} Delete={deleteTask} update={updateTask}></TaskList><br></br>
           
          </div>
     </div>

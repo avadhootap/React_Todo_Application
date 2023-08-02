@@ -1,9 +1,8 @@
 
 interface todo{
-  
-  handleInput
-  addtask:()=>void
-  inputVal:string
+  handleInput: (e) => void;
+  addtask: () => void;
+  inputVal: string;
 }
 
 function AddTodo(prop:todo) {
