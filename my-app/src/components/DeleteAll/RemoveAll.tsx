@@ -5,7 +5,7 @@ function RemoveAll(props) {
     const {DeleteAll,buttonText}=props;
   return (
     <div>
-        <Button onClickFunc={DeleteAll}buttonText={buttonText}></Button>
+       
       
     </div>
   )

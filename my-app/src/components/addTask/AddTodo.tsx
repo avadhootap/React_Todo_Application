@@ -1,5 +1,12 @@
 
-function AddTodo(prop) {
+interface todo{
+  
+  handleInput
+  addtask:()=>void
+  inputVal:string
+}
+
+function AddTodo(prop:todo) {
   const {handleInput,addtask,inputVal}=prop;
   return (
     <div>

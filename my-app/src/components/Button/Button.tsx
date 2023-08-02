@@ -1,10 +1,15 @@
 import React from 'react'
 
-function Button(prop) {
-    const {onClickFunc,buttonText}=prop;
+interface btn{
+  DeleteAll:()=>void
+  buttonText:string
+}
+
+function Button(prop:btn) {
+    const {DeleteAll,buttonText}=prop;
   return (
     <div>
-      <button type='button' id='delete' onClick={onClickFunc}>{buttonText}</button>
+      <button type='button' id='delete' onClick={DeleteAll}>{buttonText}</button>
     </div>
   )
 }
